@@ -1,0 +1,63 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+GET http://localhost:8000/dataSource/list
+
+### Send POST request with json body
+POST http://localhost:8000/dataSource/add
+Content-Type: application/json
+
+{
+  "name": "mysql",
+  "type": "mysql",
+  "url": "",
+  "host": "172.18.12.33",
+  "port": 3306,
+  "username": "root",
+  "password": "IyUn9@6{)qq",
+  "db": "config"
+}
+
+
+
+###
+GET http://localhost:8000/dataSource/test?id=1
+Accept: application/json
+
+
+###
+POST http://localhost:8000/dataSource/update
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "mysql",
+  "type": "mysql",
+  "url": "",
+  "host": "172.18.12.33",
+  "port": 3306,
+  "username": "root",
+  "password": "IyUn9@6{)qq",
+  "db": "data_copilot"
+}
+
+###
+GET http://localhost:8000/dataSource/delete?id=1
+
+
+###
+POST http://localhost:8000/query/query
+Content-Type: application/json
+
+{
+  "id": 1,
+  "sql": "select * from datasource_config"
+}

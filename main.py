@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-# from controller.DataSourceApi import dataSourceApi
-# from controller.QueryDataApi import queryDataApi
+from controller.DataSourceApi import dataSourceApi
+from controller.QueryDataApi import queryDataApi
 
 app = FastAPI()
 
@@ -17,5 +17,5 @@ async def say_hello(name: str):
 
 
 # 加载 dataSourceApi 接口
-# app.mount("/dataSource", dataSourceApi)
-# app.mount("/query", queryDataApi)
+app.mount("/dataSource", dataSourceApi)
+app.mount("/query", queryDataApi)
